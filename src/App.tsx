@@ -1,28 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
+import { Background } from './animations/Background'
+import { NavigationBar } from './components/nav-bar/NavigationBar'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <Canvas camera = {{
-          position: [0,0,7],
-          fov:30,
-
-        }}>
-          <color attach="background" args={["#ececec"]}/>
-          <OrbitControls/> 
-          <mesh rotation ={[Math.PI / 10,10,10]}>
-            <torusGeometry /> 
-            <meshNormalMaterial/>
-          </mesh>
-        </Canvas>
-    </>
+    <div>
+        <NavigationBar />
+        <Canvas>
+         <Background />
+      </Canvas>
+    </div>
   )
 }
 
