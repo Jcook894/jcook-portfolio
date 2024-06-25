@@ -8,7 +8,7 @@ export function Footer() {
     return (
         
         <div className="flex justify-center">
-            <div className='flex flex-row  h-16'>
+            <div className='flex flex-row h-10 pt-4'>
                 <span className="pt-1 pr-1">
                     <FaRegCopyright size={ 16 } /> 
                 </span>
