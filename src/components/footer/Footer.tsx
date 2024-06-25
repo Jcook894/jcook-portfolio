@@ -6,14 +6,16 @@ export function Footer() {
     const currentYear = currentDate.getFullYear()
 
     return (
-
-        <div className="flex align-center text-justify">
-            <span className="pt-1 pr-1">
-                <FaRegCopyright size={ 16 } /> 
-            </span>
-            <span> 
-                { currentYear } Designed & Developed with ❤️ By Julian Cook
-            </span>
+        
+        <div className="flex justify-center">
+            <div className='flex flex-row'>
+                <span className="pt-1 pr-1">
+                    <FaRegCopyright size={ 16 } /> 
+                </span>
+                <span> 
+                    { currentYear } Designed & Developed with ❤️ By Julian Cook
+                </span>
+            </div>
         </div>
 
     )
