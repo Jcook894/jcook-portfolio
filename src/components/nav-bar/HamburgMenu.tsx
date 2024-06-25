@@ -1,17 +1,31 @@
+import { useState } from "react"
+import './HamburgerMenu.css'
 
 
 export function HamburgMenu() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => setIsOpen(!isOpen)    
 
     return (
-        <button className="relative group bg-transparent hover:transparent">
-          <div className="relative flex items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all bg-slate-700 ring-gray-300 hover:ring-8 group-focus:ring-4 ring-opacity-30 duration-200">
-            <div className="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden group-focus:-translate-y-1.5 group-focus:-rotate-90">
-              <div className="bg-white h-[2px] w-7 transform transition-all duration-300 origin-left group-focus:rotate-[42deg] group-focus:w-2/3 delay-150"></div>
-              <div className="bg-white h-[2px] w-7 rounded transform transition-all duration-300 group-focus:translate-x-10"></div>
-              <div className="bg-white h-[2px] w-7 transform transition-all duration-300 origin-left group-focus:-rotate-[42deg] group-focus:w-2/3 delay-150"></div>
+        <div className="flex">
+            <div className="hamburger" onClick={toggleMenu}>
+                <div className={`line ${isOpen ? 'open' : ''}`}></div>
+                <div className={`line ${isOpen ? 'open' : ''}`}></div>
+                <div className={`line ${isOpen ? 'open' : ''}`}></div>
             </div>
-          </div>
-        </button>
+
+            {isOpen && (
+                <div className="menu flex justify-end" onClick={ toggleMenu }>
+                    <ul className="flex flex-col space-y-4">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/services">Experience</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            )}
+
+        </div>
     )
 
 }

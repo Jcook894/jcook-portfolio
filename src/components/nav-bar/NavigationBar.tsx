@@ -5,7 +5,7 @@ export function NavigationBar() {
 
     return (
 
-        <nav className='container w-full top-4 fixed'>
+        <nav className='flex justify-between items-center px-4 text-white float-right'>
             <HamburgMenu />
         </nav>
 
