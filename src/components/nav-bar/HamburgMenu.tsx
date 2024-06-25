@@ -8,7 +8,7 @@ export function HamburgMenu() {
     const toggleMenu = () => setIsOpen(!isOpen)    
 
     return (
-        <div className="flex">
+        <div className="flex justify-end">
             <div className="hamburger" onClick={toggleMenu}>
                 <div className={`line ${isOpen ? 'open' : ''}`}></div>
                 <div className={`line ${isOpen ? 'open' : ''}`}></div>

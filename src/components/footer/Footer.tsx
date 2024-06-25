@@ -8,12 +8,12 @@ export function Footer() {
     return (
         
         <div className="flex justify-center">
-            <div className='flex flex-row'>
+            <div className='flex flex-row  h-16'>
                 <span className="pt-1 pr-1">
                     <FaRegCopyright size={ 16 } /> 
                 </span>
                 <span> 
-                    { currentYear } Designed & Developed with ❤️ By Julian Cook
+                    { currentYear } Designed & Developed by <strong> Julian Cook </strong>
                 </span>
             </div>
         </div>

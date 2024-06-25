@@ -4,9 +4,14 @@ export function AboutMe() {
 
     return (
 
-        <div id='AboutMe'>
+        <div id='AboutMe' className="">
 
-            About Me information goes here.
+            <p>
+                Hi, my name is
+            </p>
+            <p>
+                Julian Cook
+            </p>
 
         </div>
 

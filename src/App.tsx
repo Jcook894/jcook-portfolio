@@ -10,19 +10,30 @@ function App() {
 
   return (
 
-    <div className='flex flex-col h-screen justify-between' style={{ width: "100%" }}>
+    <div 
+      className='flex flex-col h-screen justify-between' 
+      style={{ width: "100%" }}
+    >
       
       <NavigationBar />
       
-      <main className='flex flex-col justify-between mb-auto'>
+      <main className='flex justify-between mb-auto'>
 
-        <AboutMe />
+        <div className='flex flex-col'>
 
-        <Experience />
+          <AboutMe />
 
-        <Portfolio />
+        </div>
 
-        <ContactMe />
+        <div className='flex flex-col'> 
+
+          <Experience />
+
+          <Portfolio />
+
+          <ContactMe />
+
+        </div>
 
       </main> 
       
