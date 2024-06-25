@@ -1,6 +1,5 @@
 import './App.css'
 import { NavigationBar } from './components/nav-bar/NavigationBar'
-import { Footer } from './components/footer/Footer'
 import { MyInfo } from './components/my-info/MyInfo'
 import { Experience } from './components/experience/Experience'
 import { Portfolio } from './components/portfolio/Portfolio'
@@ -33,9 +32,7 @@ function App() {
         </div>
 
       </main> 
-      
-      <Footer />
-     
+           
     </div>
 
   )
