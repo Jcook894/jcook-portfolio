@@ -18,27 +18,27 @@ export function MyInfo() {
                 <RxAvatar size={ 120 } />
             </div>
             <div className="flex flex-col justify-center text-center">
-                <h1 className="font-bold"> Julian Cook </h1>
-                <p className="font-bold text-2xl"> Senior Software Engineer </p>
+                <p className="font-extrabold text-5xl"> Julian Cook </p>
+                <p className="font-bold text-xl"> Senior Software Engineer </p>
             </div>
             
             {/* Social info and Resume download */}
-            <div className="object-bottom bottom-0 pt-4 pb-4">
+            <div className="object-bottom bottom-0 pb-4">
                 <div
-                    className="flex flex-row justify-evenly bottom-0 pt-6"
+                    className="flex flex-row justify-evenly bottom-0 pt-6 w-15"
                 >
                     <RiLinkedinBoxLine
-                        size={ 40 } 
+                        size={ 30 } 
                         onClick={ () => window.location.replace(linkedin) } 
                         className="cursor-pointer" 
                     />
                     <FaSquareGithub
-                        size={ 40 } 
+                        size={ 30 } 
                         onClick={ () => window.location.replace(github) } 
                         className="cursor-pointer"
                     />
                     <LuNewspaper 
-                        size={ 40 } 
+                        size={ 30 } 
                         onClick={ () => console.log( "Download Resume" )  } 
                         className="cursor-pointer"
                     />
