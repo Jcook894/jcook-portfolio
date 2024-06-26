@@ -21,7 +21,7 @@ function App() {
 
         </div>
 
-        <div className='container flex flex-col overflow-scroll h-screen'> 
+        <div className='container flex flex-col overflow-scroll h-screen pb-20'> 
 
           <AboutMe />
 

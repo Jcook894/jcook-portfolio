@@ -5,9 +5,9 @@ export function NavigationBar() {
 
     return (
 
-        <nav className='flex justify-end px-4 text-white h-18'>
+        <div className='flex justify-end px-4 text-white h-18 bg-transparent'>
             <HamburgMenu />
-        </nav>
+        </div>
 
     )
 
