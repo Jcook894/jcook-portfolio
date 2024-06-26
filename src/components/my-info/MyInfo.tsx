@@ -25,7 +25,7 @@ export function MyInfo() {
             {/* Social info and Resume download */}
             <div className="object-bottom bottom-0 pb-4">
                 <div
-                    className="flex flex-row justify-evenly bottom-0 pt-6 w-15"
+                    className="flex flex-row justify-evenly bottom-0 pt-6"
                 >
                     <RiLinkedinBoxLine
                         size={ 30 } 

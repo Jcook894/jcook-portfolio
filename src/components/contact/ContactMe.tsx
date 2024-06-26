@@ -43,15 +43,15 @@ export function ContactMe() {
 
     const onSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        location.href = `mailto:${contactForm.email.value}?subject=${contactForm.name.value}&body=${contactForm.message.value}`;
+        location.href = `mailto:jcook3894@gmail.com?subject=${contactForm.name.value}&body=${contactForm.message.value}`;
     }
     
     return (
 
-        <div className="my-2 sm:my-4 md:my-6 shadow-sm cursor-pointer">
+        <div className="my-2 sm:my-4 md:my-6 shadow-sm">
             
             <div 
-                className="px-6 items-center justify-center h-20 select-none flex flex-row"
+                className="px-6 items-center justify-center h-20 select-none flex flex-row cursor-pointer"
                 onClick={toggleForm}
             >
                 <h5 className="pr-2"> Contact Me </h5>
