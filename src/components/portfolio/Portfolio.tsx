@@ -4,7 +4,7 @@ export function Portfolio() {
 
     return (
 
-        <div id='Portfolio'  className="p-6 text-left">
+        <div id='Portfolio' className="p-6 text-left">
 
             <h2 className="pb-10 font-bold"> Portfolio </h2>
 

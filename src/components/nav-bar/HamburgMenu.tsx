@@ -9,6 +9,7 @@ export function HamburgMenu() {
 
     return (
         <div className="flex justify-end">
+
             <div className="hamburger" onClick={toggleMenu}>
                 <div className={`line ${isOpen ? 'open' : ''}`}></div>
                 <div className={`line ${isOpen ? 'open' : ''}`}></div>
@@ -21,7 +22,6 @@ export function HamburgMenu() {
                         <li><a href="#AboutMe">About Me</a></li>
                         <li><a href="#Experience">Experience</a></li>
                         <li><a href="#Portfolio">Portfolio</a></li>
-                        <li><a href="#ContactMe">Contact Me</a></li>
                     </ul>
                 </div>
             ) }

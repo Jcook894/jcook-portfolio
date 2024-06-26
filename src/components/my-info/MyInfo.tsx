@@ -5,22 +5,25 @@ import { ContactMe } from "../contact/ContactMe";
 
 
 export function MyInfo() {
+    
     const github = 'https://github.com/Jcook894'
     const linkedin = 'www.linkedin.com/in/julian-c-4a3563178'
 
     return (
 
-        <div id='AboutMe'>
+        <div id='AboutMe' className="flex flex-col justify-between">
 
-            <div className="flex flex-col justify-evenly">
-                <h1 className="font-bold">
-                    Julian Cook
-                </h1>
-                <h2>
-                    Senior Software Engineer
-                </h2>
+            <div className="flex flex-col justify-evenly text-left">
+                <h1 className="font-bold"> Julian Cook </h1>
+                <h3 className="font-bold"> Senior Software Engineer </h3>
             </div>
             
+            {/* Contact me dropdown */}
+            <div>
+                <ContactMe />
+            </div>
+            
+
             {/* Social info and Resume download */}
             <div className="flex flex-row justify-evenly pt-6" >
                 <RiLinkedinBoxLine
@@ -39,10 +42,6 @@ export function MyInfo() {
                     className="cursor-pointer"
                 />
             </div>
-
-
-            {/* Contact me dropdown */}
-            <ContactMe />
 
         </div>
 

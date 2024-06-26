@@ -9,19 +9,19 @@ function App() {
 
   return (
 
-    <div className='flex flex-col'>
+    <div className='flex flex-col overflow-hidden'>
       
       <NavigationBar />
       
       <main className='flex flex-row'>
 
-        <div className='flex flex-col'>
+        <div className='container flex flex-col h-screen'>
 
           <MyInfo />
 
         </div>
 
-        <div className='flex flex-col overflow-scroll'> 
+        <div className='container flex flex-col overflow-scroll h-screen'> 
 
           <AboutMe />
 

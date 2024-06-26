@@ -6,6 +6,8 @@
 
 
 :root {
+  height: 100vh;
+  overflow: hidden;
   scroll-behavior: smooth;
   font-family: 'Geist Mono Variable';
   line-height: 1.5;

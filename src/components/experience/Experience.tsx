@@ -4,7 +4,7 @@ export function Experience() {
 
     return (
 
-        <div id="Experience" className="w-90 flex flex-col flex-row p-6 text-left">
+        <div id="Experience" className="flex flex-col flex-row p-6 text-left">
 
             <h2 className="pb-10 font-bold"> Work Experience </h2>
 
