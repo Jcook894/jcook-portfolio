@@ -64,8 +64,9 @@ export function ContactMe() {
             >
                 <div className="flex p-2 w-full rounded-sm">
                     <input
+                        required
                         type="text"
-                        className="text-black mt-1 w-full rounded-sm border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50"
+                        className="text-black p-1 h-8 mt-1 w-full rounded-sm border-gray-300 shadow-sm focus:border-[#009bd6] "
                         placeholder="Name"
                         value={ contactForm.name.value }
                         onChange={ ( e ) => handleChange( e, "name" ) }
@@ -73,8 +74,9 @@ export function ContactMe() {
                 </div>
                 <div className="flex p-2">
                     <input
+                        required
                         type="email"
-                        className="text-black mt-1 w-full rounded-sm border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50"
+                        className="text-black p-1 h-8 mt-1 w-full rounded-sm border-gray-300 shadow-sm focus:border-[#009bd6] focus:ring focus:ring-[#009bd6] focus:ring-opacity-50"
                         placeholder="Email"
                         value={ contactForm.email.value }
                         onChange={ ( e ) => handleChange( e, "email" ) }
@@ -82,8 +84,9 @@ export function ContactMe() {
                 </div>
                 <div className="flex grow p-2">
                     <textarea
-                        className="text-black mt-1 w-full rounded-sm border-gray-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-500 focus:ring-opacity-50"
-                        placeholder="Message"
+                        required
+                        className="text-black p-1 h-20 mt-1 w-full rounded-sm border-gray-300 shadow-sm focus:border-[#009bd6] focus:ring focus:ring-[#009bd6] focus:ring-opacity-50"
+                        placeholder="Message..."
                         value={ contactForm.message.value }
                         onChange={ ( e ) => handleChange( e, "message" ) }
                     />                      
@@ -91,7 +94,7 @@ export function ContactMe() {
                 <div>
                     <button
                         type="submit"
-                        className={`text-black bg-white mt-6 border rounded-xl border-gray-300 p-2 hover:bg-purple-500 hover:text-white`}
+                        className={`text-black bg-white mt-6 border rounded-xl border-gray-300 p-2 hover:bg-[#009bd6] hover:text-white`}
                     >
                         Submit Message
                     </button>   

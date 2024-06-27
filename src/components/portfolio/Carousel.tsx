@@ -2,19 +2,14 @@
 const portfolioItems = [
     {
         name: "SafetyMap",
-        img: "",
+        img: "/1cb971e9-13ce-484a-949d-c9ecd6c42f44.png",
         description: ""
     },
     {
         name: "ezMAF",
-        img: "",
+        img: "/45b325f9-5a34-40c6-98d5-cc029bbc5b54.png",
         description: ""
     },
-    {
-        name: "Condition Validator",
-        img: "",
-        description: ""
-    }
 ]
 
 const Carousel = () => {
@@ -25,10 +20,10 @@ const Carousel = () => {
         <div id="animation-carousel" className="relative w-full" data-carousel="static">
             <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
                 <div className="duration-200 ease-linear rounded" data-carousel-item>
-                    <img src='/SafetyMap.png' className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                    <img src="/1cb971e9-13ce-484a-949d-c9ecd6c42f44.png" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
                 </div>
                 <div className="duration-200 ease-linear" data-carousel-item>
-                    <img src='/ezMAF.png' className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+                    <img src="/45b325f9-5a34-40c6-98d5-cc029bbc5b54.png" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
                 </div>
             </div>
 

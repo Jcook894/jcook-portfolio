@@ -14,7 +14,7 @@ function App() {
   return (
     <BackgroundCanvas>
 
-      <div className={`flex flex-col ${ getViewportSize?.[0] > 800 ? "overflow-hidden" : null }`}>
+      <div className={`flex flex-col ${ getViewportSize?.[0] > 800 ? "overflow-hidden" : "overflow-auto" }`}>
 
         <NavigationBar />
         
