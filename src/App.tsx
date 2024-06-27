@@ -5,25 +5,28 @@ import { Experience } from './components/experience/Experience'
 import { Portfolio } from './components/portfolio/Portfolio'
 import { AboutMe } from './components/about-me/AboutMe'
 import BackgroundCanvas from './components/background/BackgroundCanvas'
+import useViewportSize from './utils/useViewportSize'
 
 function App() {
 
+  const getViewportSize = useViewportSize()
+
   return (
     <BackgroundCanvas>
-      <div className='flex flex-col overflow-hidden'>
+
+      <div className={`flex flex-col ${ getViewportSize?.[0] < 800 ? null : "overflow-hidden" }`}>
 
         <NavigationBar />
         
-        <main className='flex flex-row'>
-          {/* <canvas className='absolute w-full h-full' style={{ background: "#232323" }} /> */}
+        <main className={`flex  ${ getViewportSize?.[0] <= 600 ? "flex-col" : "flex-row" }`}>
 
-          <div className='container flex flex-col h-screen'>
+          <div className={`container flex flex-col ${ getViewportSize?.[0] < 800 ? "flex-col" : "h-screen" }`}>
 
             <MyInfo />
 
           </div>
 
-          <div className='container flex flex-col overflow-scroll h-screen pb-20'> 
+          <div className={`container flex flex-col ${ getViewportSize?.[0] < 900 ? null : "overflow-scroll" } h-screen pb-20`}> 
 
             <AboutMe />
 
@@ -36,7 +39,8 @@ function App() {
         </main> 
             
       </div>
-      </BackgroundCanvas>
+
+    </BackgroundCanvas>
   )
 
 }

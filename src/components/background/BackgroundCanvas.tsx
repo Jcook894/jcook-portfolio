@@ -5,7 +5,7 @@ interface ParticleCanvasProps {
 }
 
 const BackgroundCanvas: React.FC<ParticleCanvasProps> = ({ children }) => {
-    const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current!
@@ -14,15 +14,15 @@ const BackgroundCanvas: React.FC<ParticleCanvasProps> = ({ children }) => {
     const ctx = canvas.getContext('2d')!
     if (!ctx) return;
 
-    const w = window.innerWidth;
-    const h = window.innerHeight;
+    let w = window.innerWidth;
+    let h = window.innerHeight;
     const particleCount = 100;
     const particles: Particle[] = [];
     const maxDistance = 100;
     const attractionDistance = 100; // Adjust this distance for attraction threshold
     const attractionForce = 0.02; // Adjust this force for attraction strength
     const originalSpeed = 1; // Adjust original speed
-    const colors = ['#02F7D8', '#0D00FF', '#2FFF00', '#ABFF19', '#0D00FF'];
+    const colors = ['#ff8c00', '#ff4500', '#ff6347', '#ffa500', '#ff7f50'];
     const mouse = { x: w / 2, y: h / 2 };
 
     class Particle {
@@ -119,6 +119,14 @@ const BackgroundCanvas: React.FC<ParticleCanvasProps> = ({ children }) => {
       requestAnimationFrame(animate);
     }
 
+    const resizeCanvas = () => {
+      w = window.innerWidth;
+      h = window.innerHeight;
+      canvas.width = w;
+      canvas.height = h;
+      ctx.clearRect(0, 0, w, h);
+    };
+
     canvas.width = w;
     canvas.height = h;
 
@@ -133,17 +141,18 @@ const BackgroundCanvas: React.FC<ParticleCanvasProps> = ({ children }) => {
       mouse.y = event.clientY;
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    const handleMouseLeave = () => {
+      mouse.x = w / 2;
+      mouse.y = h / 2;
     };
 
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseleave', handleMouseLeave);
     window.addEventListener('resize', resizeCanvas);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseleave', handleMouseLeave);
       window.removeEventListener('resize', resizeCanvas);
     };
   }, []);

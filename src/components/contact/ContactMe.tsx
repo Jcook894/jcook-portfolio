@@ -60,7 +60,7 @@ export function ContactMe() {
 
             <form
                 onSubmit={ (e) => onSubmit(e) }
-                className={`flex flex-col justify-center px-6 pt-0 overflow-hidden transition-[max-height] duration-200 ease-in ${isOpen ? "max-h-80" : "max-h-0"} w-full`}
+                className={`flex flex-col justify-center px-6 pt-0 overflow-hidden transition-[max-height] duration-400 ease-in ${isOpen ? "max-h-80" : "max-h-0"} w-full`}
             >
                 <div className="flex p-2 w-full rounded-sm">
                     <input

@@ -1,7 +1,6 @@
 import { RiLinkedinBoxLine } from "react-icons/ri";
 import { RxAvatar } from "react-icons/rx";
 import { FaSquareGithub } from "react-icons/fa6";
-import { LuNewspaper } from "react-icons/lu";
 import { ContactMe } from "../contact/ContactMe";
 
 
@@ -35,11 +34,6 @@ export function MyInfo() {
                     <FaSquareGithub
                         size={ 30 } 
                         onClick={ () => window.location.replace(github) } 
-                        className="cursor-pointer"
-                    />
-                    <LuNewspaper 
-                        size={ 30 } 
-                        onClick={ () => console.log( "Download Resume" )  } 
                         className="cursor-pointer"
                     />
                 </div>
