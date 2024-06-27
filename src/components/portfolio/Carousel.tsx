@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 const portfolioItems = [
     {
@@ -14,40 +15,50 @@ const portfolioItems = [
 
 const Carousel = () => {
  
-    
+    const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+    const handlePrev = () => {
+      setCurrentIndex((prevIndex: number) => (prevIndex === 0 ? portfolioItems.length - 1 : prevIndex - 1));
+    };
+  
+    const handleNext = () => {
+      setCurrentIndex((prevIndex: number) => (prevIndex === portfolioItems.length - 1 ? 0 : prevIndex + 1));
+    };
+  
     return (
-
-        <div id="animation-carousel" className="relative w-full" data-carousel="static">
-            <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-                <div className="duration-200 ease-linear rounded" data-carousel-item>
-                    <img src="/1cb971e9-13ce-484a-949d-c9ecd6c42f44.png" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                </div>
-                <div className="duration-200 ease-linear" data-carousel-item>
-                    <img src="/45b325f9-5a34-40c6-98d5-cc029bbc5b54.png" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-                </div>
-            </div>
-
-            {/* Controls */}
-            <button type="button" className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                    </svg>
-                    <span className="sr-only">Previous</span>
-                </span>
-            </button>
-            <button type="button" className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                    </svg>
-                    <span className="sr-only">Next</span>
-                </span>
-            </button>
-
+      <div className="relative w-full max-w-3xl mx-auto">
+        <div className="overflow-hidden rounded-lg shadow-lg">
+          <div className="flex transition-transform duration-300 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+            {portfolioItems.map((image, index) => (
+              <div key={index} className="w-full flex-shrink-0">
+                <img src={image.img} alt={`Slide ${index}`} className="w-full object-cover" />
+              </div>
+            ))}
+          </div>
         </div>
-
-    )
+        <button
+          onClick={handlePrev}
+          className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 focus:outline-none hover:bg-gray-600"
+        >
+          &lt;
+        </button>
+        <button
+          onClick={handleNext}
+          className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white rounded-full p-2 focus:outline-none hover:bg-gray-600"
+        >
+          &gt;
+        </button>
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {portfolioItems.map((_, index) => (
+            <button
+              key={index}
+              className={`h-2 w-2 rounded-full focus:outline-none ${currentIndex === index ? 'bg-white' : 'bg-gray-400'}`}
+              onClick={() => setCurrentIndex(index)}
+            ></button>
+          ))}
+        </div>
+      </div>
+    );
 
 }
 

@@ -14,19 +14,19 @@ function App() {
   return (
     <BackgroundCanvas>
 
-      <div className={`flex flex-col ${ getViewportSize?.[0] > 800 ? "overflow-hidden" : "overflow-auto" }`}>
+      <div className={`flex flex-col ${ getViewportSize?.[0] > 800 ? "overflow-hidden" : null }`}>
 
         <NavigationBar />
         
         <main className={`flex  ${ getViewportSize?.[0] > 800 ? "flex-row" : "flex-col" }`}>
 
-          <div className={`container flex flex-col ${ getViewportSize?.[0] < 800 ? "flex-col" : "h-screen" }`}>
+          <div className={`md:container flex flex-col ${ getViewportSize?.[0] < 800 ? "flex-col" : "h-screen" }`}>
 
             <MyInfo />
 
           </div>
 
-          <div className={`container flex flex-col ${ getViewportSize?.[0] > 800 ? "overflow-scroll" : null } h-screen pb-20`}> 
+          <div className={`md:container flex flex-col ${ getViewportSize?.[0] > 800 ? "overflow-scroll" : null } h-screen pb-20`}> 
 
             <AboutMe />
 

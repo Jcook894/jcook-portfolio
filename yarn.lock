@@ -2401,11 +2401,6 @@ three-stdlib@^2.29.9:
     fflate "^0.6.9"
     potpack "^1.0.1"
 
-three@^0.165.0:
-  version "0.165.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.165.0.tgz#43b93b9b56c71b7eeee6b531d737ab573633ccd1"
-  integrity sha512-cc96IlVYGydeceu0e5xq70H8/yoVT/tXBxV/W8A/U6uOq7DXc4/s1Mkmnu6SqoYGhSRWWYFOhVwvq6V0VtbplA==
-
 to-fast-properties@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-2.0.0.tgz#dc5e698cbd079265bc73e0377681a4e4e83f616e"

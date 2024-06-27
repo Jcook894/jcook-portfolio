@@ -156,7 +156,7 @@ const BackgroundCanvas: React.FC<ParticleCanvasProps> = ({ children }) => {
 
   return (
     <div className="relative w-full h-full">
-      <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full bg-[#1d1936]" />
+      <canvas ref={canvasRef} className="absolute top-0 left-0 bg-[#1d1936] w-full h-full" />
       <div className="relative z-10">{children}</div>
     </div>
   );
