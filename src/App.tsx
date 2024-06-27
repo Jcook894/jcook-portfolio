@@ -14,11 +14,11 @@ function App() {
   return (
     <BackgroundCanvas>
 
-      <div className={`flex flex-col ${ getViewportSize?.[0] < 800 ? null : "overflow-hidden" }`}>
+      <div className={`flex flex-col ${ getViewportSize?.[0] > 800 ? "overflow-hidden" : null }`}>
 
         <NavigationBar />
         
-        <main className={`flex  ${ getViewportSize?.[0] <= 600 ? "flex-col" : "flex-row" }`}>
+        <main className={`flex  ${ getViewportSize?.[0] > 800 ? "flex-row" : "flex-col" }`}>
 
           <div className={`container flex flex-col ${ getViewportSize?.[0] < 800 ? "flex-col" : "h-screen" }`}>
 
@@ -26,7 +26,7 @@ function App() {
 
           </div>
 
-          <div className={`container flex flex-col ${ getViewportSize?.[0] < 900 ? null : "overflow-scroll" } h-screen pb-20`}> 
+          <div className={`container flex flex-col ${ getViewportSize?.[0] > 800 ? "overflow-scroll" : null } h-screen pb-20`}> 
 
             <AboutMe />
 

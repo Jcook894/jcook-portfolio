@@ -19,9 +19,9 @@ const BackgroundCanvas: React.FC<ParticleCanvasProps> = ({ children }) => {
     const particleCount = 100;
     const particles: Particle[] = [];
     const maxDistance = 100;
-    const attractionDistance = 100; // Adjust this distance for attraction threshold
-    const attractionForce = 0.02; // Adjust this force for attraction strength
-    const originalSpeed = 1; // Adjust original speed
+    const attractionDistance = 100;
+    const attractionForce = 0.02;
+    const originalSpeed = 1;
     const colors = ['#ff8c00', '#ff4500', '#ff6347', '#ffa500', '#ff7f50'];
     const mouse = { x: w / 2, y: h / 2 };
 
@@ -47,7 +47,6 @@ const BackgroundCanvas: React.FC<ParticleCanvasProps> = ({ children }) => {
       }
 
       update() {
-        // Move towards mouse if close
         const dx = mouse.x - this.x;
         const dy = mouse.y - this.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -58,20 +57,16 @@ const BackgroundCanvas: React.FC<ParticleCanvasProps> = ({ children }) => {
           this.vx += Math.cos(angle) * force;
           this.vy += Math.sin(angle) * force;
         } else {
-          // Move randomly if far from mouse
           this.vx = this.originalVx;
           this.vy = this.originalVy;
         }
 
-        // Increase speed slightly
         this.vx *= 1.01;
         this.vy *= 1.01;
 
-        // Update position
         this.x += this.vx;
         this.y += this.vy;
 
-        // Wrap around screen edges
         if (this.x > w) this.x = 0;
         if (this.x < 0) this.x = w;
         if (this.y > h) this.y = 0;
@@ -150,6 +145,8 @@ const BackgroundCanvas: React.FC<ParticleCanvasProps> = ({ children }) => {
     window.addEventListener('mouseleave', handleMouseLeave);
     window.addEventListener('resize', resizeCanvas);
 
+    resizeCanvas();
+
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseleave', handleMouseLeave);
@@ -158,7 +155,7 @@ const BackgroundCanvas: React.FC<ParticleCanvasProps> = ({ children }) => {
   }, []);
 
   return (
-    <div className="relative h-full w-full">
+    <div className="relative w-full h-full">
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full" />
       <div className="relative z-10">{children}</div>
     </div>
