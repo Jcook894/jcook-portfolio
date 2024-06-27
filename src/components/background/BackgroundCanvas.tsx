@@ -22,7 +22,7 @@ const BackgroundCanvas: React.FC<ParticleCanvasProps> = ({ children }) => {
     const attractionDistance = 100;
     const attractionForce = 0.02;
     const originalSpeed = 1;
-    const colors = ['#ff8c00', '#ff4500', '#ff6347', '#ffa500', '#ff7f50'];
+    const colors = ['#00b8ff', '#009bd6', '#00719c', '#00415a', '#505a74'];
     const mouse = { x: w / 2, y: h / 2 };
 
     class Particle {
@@ -156,7 +156,7 @@ const BackgroundCanvas: React.FC<ParticleCanvasProps> = ({ children }) => {
 
   return (
     <div className="relative w-full h-full">
-      <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full" />
+      <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full bg-[#1d1936]" />
       <div className="relative z-10">{children}</div>
     </div>
   );
