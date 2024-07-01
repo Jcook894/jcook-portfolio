@@ -9,26 +9,29 @@ import useViewportSize from './utils/useViewportSize'
 
 function App() {
 
+  const layoutChangeWidth = 900
   const getViewportSize = useViewportSize()
-
-  console.log( getViewportSize )
 
   return (
     <BackgroundCanvas>
 
       <div className={`flex flex-col h-screen w-screen overflow-hidden`}>
 
-        <NavigationBar />
+        <div> 
         
-        <main className={`flex  ${ getViewportSize?.[0] > 800 ? "flex-row" : "flex-col overflow-auto" }`}>
+          <NavigationBar />
 
-          <div className={`container flex flex-col ${ getViewportSize?.[0] < 800 ? "flex-col" : null }`}>
+        </div>
+        
+        <main className={`flex  ${ getViewportSize?.[0] > layoutChangeWidth ? "flex-row" : "flex-col overflow-auto" }`}>
+
+          <div className={`lg:container flex flex-col ${ getViewportSize?.[0] < layoutChangeWidth ? "flex-col" : null }`}>
 
             <MyInfo />
 
           </div>
 
-          <div className={`lg:container flex flex-col ${ getViewportSize?.[0] > 800 ? "overflow-scroll pr-8" : "p-4" } h-screen pb-20 `}> 
+          <div className={`lg:container flex flex-col ${ getViewportSize?.[0] > layoutChangeWidth ? "overflow-scroll pr-8" : "p-4" } h-screen pb-20 `}> 
 
             <AboutMe />
 

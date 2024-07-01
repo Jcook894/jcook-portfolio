@@ -63,29 +63,44 @@ export function ContactMe() {
                 className={`flex flex-col justify-center px-6 pt-0 overflow-hidden transition-[max-height] duration-400 ease-in ${isOpen ? "max-h-80" : "max-h-0"} w-full`}
             >
                 <div className="flex p-2 w-full rounded-sm">
+                    {
+                        contactForm.name.error && <p>
+                            Please enter your name
+                        </p>
+                    }
                     <input
                         required
                         type="text"
-                        className="text-black p-1 h-8 mt-1 w-full rounded-sm border-gray-300 shadow-sm focus:border-[#009bd6] "
+                        className="text-black p-1 h-8 mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-[#009bd6] "
                         placeholder="Name"
                         value={ contactForm.name.value }
                         onChange={ ( e ) => handleChange( e, "name" ) }
                     />                     
                 </div>
                 <div className="flex p-2">
+                    {
+                        contactForm.email.error && <p>
+                            Please enter your email
+                        </p>
+                    }
                     <input
                         required
                         type="email"
-                        className="text-black p-1 h-8 mt-1 w-full rounded-sm border-gray-300 shadow-sm focus:border-[#009bd6] focus:ring focus:ring-[#009bd6] focus:ring-opacity-50"
+                        className="text-black p-1 h-8 mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-[#009bd6] focus:ring focus:ring-[#009bd6] focus:ring-opacity-50"
                         placeholder="Email"
                         value={ contactForm.email.value }
                         onChange={ ( e ) => handleChange( e, "email" ) }
                     />                    
                 </div>
                 <div className="flex grow p-2">
+                    {
+                        contactForm.message.error && <p>
+                            Please enter a message
+                        </p>
+                    }
                     <textarea
                         required
-                        className="text-black p-1 h-20 mt-1 w-full rounded-sm border-gray-300 shadow-sm focus:border-[#009bd6] focus:ring focus:ring-[#009bd6] focus:ring-opacity-50"
+                        className="text-black p-1 h-20 mt-1 w-full rounded-lg border-gray-300 shadow-sm focus:border-[#009bd6] focus:ring focus:ring-[#009bd6] focus:ring-opacity-50"
                         placeholder="Message..."
                         value={ contactForm.message.value }
                         onChange={ ( e ) => handleChange( e, "message" ) }

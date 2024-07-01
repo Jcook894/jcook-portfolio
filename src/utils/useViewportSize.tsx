@@ -19,7 +19,7 @@ const useViewportSize = () => {
       window.removeEventListener("resize", windowSizeHandler)
     }
 
-  }, [windowSize])
+  }, [])
 
   return windowSize
 

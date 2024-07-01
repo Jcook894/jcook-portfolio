@@ -39,12 +39,16 @@ const BackgroundCanvas: React.FC<BackgroundCanvasProps> = ({ children, particleC
         this.x += this.vx;
         this.y += this.vy;
 
-        if (this.x > canvas.width || this.x < 0) {
-          this.vx = -this.vx;
+        if (this.x > canvas.width) {
+          this.x = 0;
+        } else if (this.x < 0) {
+          this.x = canvas.width;
         }
 
-        if (this.y > canvas.height || this.y < 0) {
-          this.vy = -this.vy;
+        if (this.y > canvas.height) {
+          this.y = 0;
+        } else if (this.y < 0) {
+          this.y = canvas.height;
         }
       }
 
@@ -99,6 +103,8 @@ const BackgroundCanvas: React.FC<BackgroundCanvasProps> = ({ children, particleC
       const dpr = window.devicePixelRatio || 1;
       canvas.width = window.innerWidth * dpr;
       canvas.height = window.innerHeight * dpr;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
       ctx.scale(dpr, dpr);
 
       particles = [];
