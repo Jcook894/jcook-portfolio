@@ -11,22 +11,24 @@ function App() {
 
   const getViewportSize = useViewportSize()
 
+  console.log( getViewportSize )
+
   return (
     <BackgroundCanvas>
 
-      <div className={`flex flex-col ${ getViewportSize?.[0] > 800 ? "overflow-hidden" : null }`}>
+      <div className={`flex flex-col h-screen w-screen overflow-hidden`}>
 
         <NavigationBar />
         
-        <main className={`flex  ${ getViewportSize?.[0] > 800 ? "flex-row" : "flex-col" }`}>
+        <main className={`flex  ${ getViewportSize?.[0] > 800 ? "flex-row" : "flex-col overflow-auto" }`}>
 
-          <div className={`md:container flex flex-col ${ getViewportSize?.[0] < 800 ? "flex-col" : "h-screen" }`}>
+          <div className={`container flex flex-col ${ getViewportSize?.[0] < 800 ? "flex-col" : null }`}>
 
             <MyInfo />
 
           </div>
 
-          <div className={`md:container flex flex-col ${ getViewportSize?.[0] > 800 ? "overflow-scroll" : null } h-screen pb-20`}> 
+          <div className={`lg:container flex flex-col ${ getViewportSize?.[0] > 800 ? "overflow-scroll pr-8" : "p-4" } h-screen pb-20 `}> 
 
             <AboutMe />
 

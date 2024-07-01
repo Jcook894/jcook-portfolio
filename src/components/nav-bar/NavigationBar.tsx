@@ -5,7 +5,7 @@ export function NavigationBar() {
 
     return (
 
-        <div className='flex justify-end px-4 text-white h-18 bg-transparent'>
+        <div className='flex justify-end pr-4 pt-2 h-16 text-white bg-transparent'>
             <HamburgMenu />
         </div>
 
