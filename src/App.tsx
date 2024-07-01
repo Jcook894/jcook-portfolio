@@ -17,7 +17,7 @@ function App() {
 
       <div className={`flex flex-col h-screen w-screen overflow-hidden`}>
 
-        <div> 
+        <div className='flex '> 
         
           <NavigationBar />
 
@@ -25,15 +25,17 @@ function App() {
         
         <main className={`flex  ${ getViewportSize?.[0] > layoutChangeWidth ? "flex-row" : "flex-col overflow-auto" }`}>
 
-          <div className={`lg:container flex flex-col ${ getViewportSize?.[0] < layoutChangeWidth ? "flex-col" : null }`}>
+          <div className={`lg:container pt-20 flex flex-col ${ getViewportSize?.[0] < layoutChangeWidth ? "flex-col" : null }`}>
 
             <MyInfo />
 
           </div>
 
-          <div className={`lg:container flex flex-col ${ getViewportSize?.[0] > layoutChangeWidth ? "overflow-scroll pr-8" : "p-4" } h-screen pb-20 `}> 
+          <div className={`lg:container flex flex-col ${ getViewportSize?.[0] > layoutChangeWidth ? "overflow-scroll pr-8" : "p-4" } h-screen pt-20 pb-18`}> 
 
-            <AboutMe />
+            <div id="aboutme">
+              <AboutMe  />
+            </div>
 
             <Experience />
 

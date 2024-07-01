@@ -4,11 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+*, html {
+
+  scroll-behavior: smooth !important;
+  
+}
 
 :root {
-  height: "100%";
-  width: "100%";
-  scroll-behavior: smooth;
+  height: "100vh";
+  width: "100vw";
   font-family: 'Geist Mono Variable';
   line-height: 1.5;
   font-weight: 400;
@@ -22,11 +26,6 @@
   -moz-osx-font-smoothing: grayscale;
 
 }
-
-#anchor {
-  scroll-margin-top: 100px;
-}
-
 @media only screen and (min-width: 800px) {
   :root{
     overflow: hidden;
