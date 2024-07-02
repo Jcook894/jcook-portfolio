@@ -9,7 +9,7 @@ import useViewportSize from './utils/useViewportSize'
 
 function App() {
 
-  const layoutChangeWidth = 900
+  const layoutChangeWidth = 1000
   const getViewportSize = useViewportSize()
 
   return (
@@ -25,17 +25,15 @@ function App() {
         
         <main className={`flex  ${ getViewportSize?.[0] > layoutChangeWidth ? "flex-row" : "flex-col overflow-auto" }`}>
 
-          <div className={`lg:container pt-20 flex flex-col ${ getViewportSize?.[0] < layoutChangeWidth ? "flex-col" : null }`}>
+          <div className={`container pt-20 flex flex-col ${ getViewportSize?.[0] < layoutChangeWidth ? "flex-col" : null }`}>
 
             <MyInfo />
 
           </div>
 
-          <div className={`lg:container flex flex-col ${ getViewportSize?.[0] > layoutChangeWidth ? "overflow-scroll pr-8" : "p-4" } h-screen pt-20 pb-18`}> 
+          <div className={`container flex flex-col ${ getViewportSize?.[0] > layoutChangeWidth ? "overflow-scroll pr-8" : "p-4" } h-screen pt-20 pb-18`}> 
 
-            <div id="aboutme">
-              <AboutMe  />
-            </div>
+            <AboutMe  />
 
             <Experience />
 
