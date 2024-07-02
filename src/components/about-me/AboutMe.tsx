@@ -7,7 +7,17 @@ export function AboutMe() {
 
             <p className="pb-10 font-bold text-xl"> About Me </p>
 
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Euismod lacinia at quis risus sed vulputate odio ut. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis. Eget gravida cum sociis natoque penatibus et magnis dis. Interdum velit laoreet id donec. Elit pellentesque habitant morbi tristique senectus et netus et malesuada. Vestibulum sed arcu non odio euismod lacinia at quis. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Lorem mollis aliquam ut porttitor leo a diam. Aliquam faucibus purus in massa tempor. Pulvinar elementum integer enim neque volutpat. At auctor urna nunc id cursus metus. Praesent semper feugiat nibh sed pulvinar proin gravida. Neque laoreet suspendisse interdum consectetur. Cras sed felis eget velit aliquet sagittis id consectetur purus. Eu nisl nunc mi ipsum faucibus. Leo integer malesuada nunc vel risus commodo viverra. Nisi scelerisque eu ultrices vitae auctor eu augue. </p>
+            <p>
+                Hello! My name is Julian Cook and I'm a senior software engineer with 8 years of full stack experience, specializing in the healthcare industry. My expertise spans front-end technologies like TypeScript, Javascript, React, Angular, and Vue, as well as back-end frameworks such as .NET, Kotlin, and Java. I frequently leverage AWS to build scalable and efficient applications.
+            </p>
+            <br />
+            <p>
+                I have a deep passion for designing and developing beautiful front ends that ensure the best user experience. My goal is to create secure, intuitive, and user-friendly applications that enhance patient care and streamline healthcare operations. I thrive on solving complex problems and am always eager to embrace new challenges and learn new skills.
+            </p>
+            <br />
+            <p>
+                Please feel free to reach out! 😊
+            </p>
 
         </section>
 

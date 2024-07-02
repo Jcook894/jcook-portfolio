@@ -31,7 +31,7 @@ function App() {
 
           </div>
 
-          <div className={`container flex flex-col ${ getViewportSize?.[0] > layoutChangeWidth ? "overflow-scroll pr-8" : "p-4" } h-screen pt-20 pb-18`}> 
+          <div className={`container flex flex-col ${ getViewportSize?.[0] > layoutChangeWidth ? "overflow-scroll pr-8" : "p-4" } h-screen pt-20 pb-14`}> 
 
             <AboutMe  />
 
